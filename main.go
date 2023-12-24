@@ -10,7 +10,7 @@ import (
 
 func main() {
 	filename := flag.String("file", "", "file name")
-	concurrency := flag.Int("concurrency", 1, "во сколькеро браузеров запросить?")
+	concurrency := flag.Int("concurrency", 1, "во сколькеро браузеров запро́сить?")
 	flag.Parse()
 
 	if *filename == "" {
