@@ -56,7 +56,7 @@ func parseData(dataJson, number string) numData {
 
 		if image, ok := carData["image"]; ok {
 			link, ok := image.(string)
-			if ok && stringHasSuffixAny(link, []string{".jpg", ".jpeg", ".png"}) { // или там только .jpg? или кто другий?
+			if ok && strings.HasSuffix(link, ".jpg") {
 				nd.previewLink = link
 			}
 		}
@@ -96,13 +96,4 @@ func download(link string) string {
 	}
 
 	return buf.String()
-}
-
-func stringHasSuffixAny(s string, suffices []string) bool {
-	for _, suf := range suffices {
-		if strings.HasSuffix(s, suf) {
-			return true
-		}
-	}
-	return false
 }
